@@ -8,19 +8,60 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #fff;
   font-size: 16px;
   font-weight: 700;
   background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'header header header' 'nav content sidebar ' 'nav footer footer';
+  -ms-grid-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
+  -ms-grid-rows: 70px 1fr 70px;
+      grid-template-rows: 70px 1fr 70px;
 }
 
-.grid--container {
-  max-width: 960px;
-  margin: 100px auto;
-}
-
-.grid--item {
-  background-color: #5488e9;
+header,
+main,
+nav,
+aside,
+footer {
+  color: #fff;
+  background-color: steelblue;
+  border: 1px solid skyblue;
   padding: 1rem;
-  margin: 1rem;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: content;
+}
+
+nav {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: nav;
+}
+
+aside {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: sidebar;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
 }
